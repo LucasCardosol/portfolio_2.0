@@ -1,12 +1,30 @@
 import { styled, css } from "../../stitches.config";
+import { keyframes } from "@stitches/react";
 import background1 from "../assets/structure/background-project-1.jpg"
+import background2 from "../assets/structure/background-project-2.jpg"
+import background3 from "../assets/structure/background-project-3.jpg"
 
 export const CarouselStyle = css({
-   
+    '@keyframes slideAnimation': {
+        from: {
+            marginLeft:'-1000px'
+        },
+        to :{
+            marginLeft:'0'
+        }
+      },
     '> div':{
         
         padding:'0 calc((100vw - 90rem)/2)',
+        paddingBottom:'20px',
         cursor:'grab',
+        transition: '0.3s',
+        animation: 'slideAnimation',
+        
+        '&:hover':{
+            transition:'2s',
+            marginLeft:'-55px'
+        },
         '> div':{
             marginRight:'40px'
         },
@@ -28,11 +46,41 @@ export const Intro = styled('section',{
     }
 })
 
-export const Projects = styled('section',{
-    h3: {
-        marginLeft: '56px',
-        marginBottom: '40px',
+const scaleUp = keyframes({
+    '0%': { 
+        opacity: '0',
+        marginRight: '50px'
     },
+    '25%': { 
+        opacity: '1'
+    },
+    '50%': { 
+        opacity: '0.5'
+    },
+    '100%': { 
+        opacity: '0'
+    },
+  });
+
+export const Projects = styled('section',{
+   
+    h3: {
+        paddingLeft: '3.5rem',
+    },
+    header:{
+        display:'flex',
+        justifyContent:'space-between',
+        alignItems:'center',
+        marginBottom: '2.5rem',
+        span:{
+            color: '$white',
+            alignItems:'center',
+            display:'flex',
+            animation: `${ scaleUp } 3s infinite`,
+            transition: '10s'
+        }
+    }
+
 })
 
 export const CarouselContainer = styled('div',{
@@ -41,8 +89,8 @@ export const CarouselContainer = styled('div',{
 
 export const Project = styled('div',{
     display: 'flex',
-    width: '760px',
-    height: '480px',
+    width: '47.5rem',
+    height: '30rem',
     padding: '8px',
     flexDirection: 'column',
     alignItems: 'center',
@@ -51,13 +99,42 @@ export const Project = styled('div',{
     background: 'radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.02) 100%)',
     boxShadow: '0px 8px 16px 0px rgba(0, 0, 0, 0.60), 0px 3px 8px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.04)',
     backdropFilter: 'blur(12px)',
-    cursor:'pointer',
-    div:{
-        width: '755px',
-        height: '376px',
-        backgroundImage: `url(${background1.src})`,
-        backgroundSize: 'cover',
-        borderRadius: '32px',
-    },
     
+    footer:{
+        display:'flex',
+        width:'calc(100% - 5rem)',
+        padding:'0.75rem 2.5rem',
+        gap:'1.5rem',
+        alignItems:'center',
+        height:'100%',
+        cursor:'pointer',
+        p:{
+            color: '$white',
+            fontSize: '$sm_2',
+            lineHeight: '1.5rem',
+            fontWeight:'600',
+            marginBottom:'0.5rem'
+        },
+        span:{
+            color:'$text',
+            fontSize:'1rem'
+        }
+    }
+})
+
+export const BgImage = styled('div',{
+    width: '47.2rem',
+    minHeight: '23.5rem',
+    backgroundSize: 'cover',
+    borderRadius: '32px',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    variants: {
+        background:{
+            bg1:{backgroundImage: `url(${background1.src})`},
+            bg2:{backgroundImage: `url(${background2.src})`},
+            bg3:{backgroundImage: `url(${background3.src})`},
+        }
+    }
 })

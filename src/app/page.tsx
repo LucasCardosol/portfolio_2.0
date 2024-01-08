@@ -4,12 +4,19 @@ import {
   Intro,
   Projects,
   Project,
-  CarouselContainer,
   CarouselStyle,
+  BgImage 
 } from "@/style";
 import { Container } from "@/style/global";
 import { ScrollingCarousel } from "@trendyol-js/react-carousel";
+import { ChartPieSlice , CaretDoubleRight} from "phosphor-react";
+import { theme } from "../../stitches.config";
+import bocaboca from '@/assets/icons/Logo BocaBoca.svg'
 
+import Image from "next/image";
+
+
+console.log('color: ',theme.colors.iconsStroke.value)
 export default function Home() {
   return (
     <main>
@@ -28,29 +35,43 @@ export default function Home() {
       </Container>
       <Projects>
         <Container>
-          <h3>Projetos</h3>
+          <header>
+            <h3>Projetos</h3>
+            <span>
+              <CaretDoubleRight size={32} color={theme.colors.white.value}/>
+            </span>
+          </header>
+          
         </Container>
         <ScrollingCarousel className={CarouselStyle()}>
           <Project>
-            <div>
-              <h1>1</h1>
-            </div>
+            <BgImage background={'bg3'}>
+             <Image src={bocaboca} width={198} height={99} alt=""/> 
+            </BgImage>
+            <footer>
+              <ChartPieSlice color={theme.colors.iconsStroke.value} weight="fill" size={32}/>
+              <div>
+                <p>Boca Boca</p>
+                <span>DashBoard</span>
+              </div>
+            </footer>
           </Project>
+
+          
           <Project>
-            <div>
-              <h1>2</h1>
-            </div>
+            <BgImage>
+             <Image src={bocaboca} width={198} height={99} alt=""/> 
+            </BgImage>
+            <footer>
+              <ChartPieSlice color={theme.colors.iconsStroke.value} weight="fill" size={32}/>
+              <div>
+                <p>Boca Boca</p>
+                <span>DashBoard</span>
+              </div>
+            </footer>
           </Project>
-          <Project>
-            <div>
-              <h1>3</h1>
-            </div>
-          </Project>
-          <Project>
-            <div>
-              <h1>4</h1>
-            </div>
-          </Project>
+
+          
         </ScrollingCarousel>
       </Projects>
     </main>

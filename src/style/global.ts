@@ -45,8 +45,13 @@ export const globalStyles = globalCss({
     },
     '&.alice-carousel':{
         background:'Red'
+    },
+    '@media screen and (max-width: 1440px)':{
+        html:{
+            fontSize: '12px'
+        },
+        
     }
-    
 })
 
 export const Container = styled('div',{

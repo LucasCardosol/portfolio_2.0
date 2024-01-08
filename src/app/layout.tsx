@@ -17,6 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <style
+          id="stitches"
+          dangerouslySetInnerHTML={{ __html: getCssText() }}
+        />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -27,10 +31,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
 
-        <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
+        
       </head>
       <body>{children}</body>
     </html>
