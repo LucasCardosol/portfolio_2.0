@@ -1,22 +1,13 @@
 "use client";
-
-import {
-  Intro,
-  Projects,
-  Project,
-  CarouselStyle,
-  BgImage 
-} from "@/style";
+import { Intro, Projects, Project, CarouselStyle, BgImage } from "@/style";
 import { Container } from "@/style/global";
-import { ScrollingCarousel } from "@trendyol-js/react-carousel";
-import { ChartPieSlice , CaretDoubleRight} from "phosphor-react";
 import { theme } from "../../stitches.config";
-import bocaboca from '@/assets/icons/Logo BocaBoca.svg'
+import bocaboca from "@/assets/icons/Logo BocaBoca.svg";
 
+import { ScrollingCarousel } from "@trendyol-js/react-carousel";
+import { ChartPieSlice, CaretDoubleRight } from "phosphor-react";
 import Image from "next/image";
 
-
-console.log('color: ',theme.colors.iconsStroke.value)
 export default function Home() {
   return (
     <main>
@@ -38,18 +29,21 @@ export default function Home() {
           <header>
             <h3>Projetos</h3>
             <span>
-              <CaretDoubleRight size={32} color={theme.colors.white.value}/>
+              <CaretDoubleRight size={32} color={theme.colors.white.value} />
             </span>
           </header>
-          
         </Container>
         <ScrollingCarousel className={CarouselStyle()}>
-          <Project>
-            <BgImage background={'bg3'}>
-             <Image src={bocaboca} width={198} height={99} alt=""/> 
+          <Project onClick={() => console.log("clicou")}>
+            <BgImage background={"bg3"}>
+              <Image src={bocaboca} width={198} height={99} alt="" />
             </BgImage>
             <footer>
-              <ChartPieSlice color={theme.colors.iconsStroke.value} weight="fill" size={32}/>
+              <ChartPieSlice
+                color={theme.colors.iconsStroke.value}
+                weight="fill"
+                size={32}
+              />
               <div>
                 <p>Boca Boca</p>
                 <span>DashBoard</span>
@@ -57,13 +51,16 @@ export default function Home() {
             </footer>
           </Project>
 
-          
           <Project>
             <BgImage>
-             <Image src={bocaboca} width={198} height={99} alt=""/> 
+              <Image src={bocaboca} width={198} height={99} alt="" />
             </BgImage>
             <footer>
-              <ChartPieSlice color={theme.colors.iconsStroke.value} weight="fill" size={32}/>
+              <ChartPieSlice
+                color={theme.colors.iconsStroke.value}
+                weight="fill"
+                size={32}
+              />
               <div>
                 <p>Boca Boca</p>
                 <span>DashBoard</span>
@@ -71,7 +68,22 @@ export default function Home() {
             </footer>
           </Project>
 
-          
+          <Project onClick={() => console.log("clicou")}>
+            <BgImage background={"bg3"}>
+              <Image src={bocaboca} width={198} height={99} alt="" />
+            </BgImage>
+            <footer>
+              <ChartPieSlice
+                color={theme.colors.iconsStroke.value}
+                weight="fill"
+                size={32}
+              />
+              <div>
+                <p>Boca Boca</p>
+                <span>DashBoard</span>
+              </div>
+            </footer>
+          </Project>
         </ScrollingCarousel>
       </Projects>
     </main>

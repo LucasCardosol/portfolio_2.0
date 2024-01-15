@@ -1,5 +1,6 @@
 import { getCssText } from "../../stitches.config";
 import { globalStyles } from "@/style/global";
+import Menu from "@/components/Menu";
 
 globalStyles();
 
@@ -30,10 +31,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap"
           rel="stylesheet"
         />
-
-        
       </head>
-      <body>{children}</body>
+      <body>
+        <Menu />
+        {children}
+      </body>
     </html>
   );
 }

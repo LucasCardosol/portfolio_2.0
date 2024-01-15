@@ -5,26 +5,11 @@ import background2 from "../assets/structure/background-project-2.jpg"
 import background3 from "../assets/structure/background-project-3.jpg"
 
 export const CarouselStyle = css({
-    '@keyframes slideAnimation': {
-        from: {
-            marginLeft:'-1000px'
-        },
-        to :{
-            marginLeft:'0'
-        }
-      },
+    
     '> div':{
-        
         padding:'0 calc((100vw - 90rem)/2)',
         paddingBottom:'20px',
         cursor:'grab',
-        transition: '0.3s',
-        animation: 'slideAnimation',
-        
-        '&:hover':{
-            transition:'2s',
-            marginLeft:'-55px'
-        },
         '> div':{
             marginRight:'40px'
         },
